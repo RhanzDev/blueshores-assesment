@@ -1,0 +1,105 @@
+.signup-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-gap: 20px;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1280px;
+  .container {
+    display: grid;
+    grid-template-areas: 'form-container marketing-container' 'phone-number phone-number';
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .form-container, .marketing-container {
+    border-radius: 20px;
+    min-height: 500px;
+  }
+  
+  .form-container {
+    grid-area: form-container;
+    padding: 20px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    width: 100%;
+  }
+  
+  .marketing-container {
+    grid-area: marketing-container;
+    container-type: inline-size;
+    container-name: marketing;
+    background-color: #FFE6BE;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .marketing-container .diagonal {
+    background: #FFC100;
+    width: 100%;
+    height: 250%;
+    transform: rotate(78deg);
+    position: absolute;
+    margin-bottom: -125%;
+    left: 0;
+  }
+  
+  .phone-number {
+    grid-area: phone-number;
+  }
+  @container marketing (min-width: 500px) {
+    .marketing-container .diagonal {
+      margin-bottom: -135%;
+      width: 125%;
+    }
+  }
+  @container marketing (max-width: 390px) {
+    .marketing-container .diagonal {
+      margin-bottom: -110%;
+      height: 125%;
+    }
+  }
+  @container marketing (max-width: 300px) {
+    .marketing-container .diagonal {
+      margin-bottom: -155%;
+      height: 300%;
+    }
+  }
+  @container marketing (max-width: 200px) {
+    .marketing-container .diagonal {
+      margin-bottom: -250%;
+    }
+  }
+  
+  @container marketing (max-width: 150px) {
+    .marketing-container .diagonal {
+      margin-bottom: -400%;
+      height: 300%;
+    }
+  }
+  @media only screen and (max-width: 1280px) {
+    .container {
+      display: grid;
+      grid-template-areas: 'form-container' 'marketing-container' 'phone-number';
+      grid-template-columns: 1fr;
+    }
+    .form-container, .marketing-container, .phone-number {
+      justify-self: center;
+      width: 100%;
+      max-width: 100%;
+    }
+    
+  }
+}
