@@ -3,4 +3,6 @@
 
 # Instruction to Run Application
  Change Directory to blueshores-assesment\frontend.
- Then, execute the following command: npm run dev
+ Then, execute the following command: 
+ npm install
+ npm run dev
