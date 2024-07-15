@@ -1,6 +1,6 @@
 <template>
   <div class="signup-flow">
-    <StepsIndicatorComponent :percentage="50" :startingPointLabel="'Setup An Account'"/>
+    <StepsIndicatorComponent :percentage="0" :startingPointLabel="'Setup An Account'"/>
     <div class="container">
       <div class="form-container">
       </div>
